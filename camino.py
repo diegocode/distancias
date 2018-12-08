@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import punto, segmento
 
 class Camino:
     def __init__(self, nomb):
@@ -47,8 +46,10 @@ class Camino:
     def darVelocidadPromedio2D(self):
         return self.darDistancia2D() / self.darTiempoTotal()
 
+
 def main(args):
     pass
+
 
 if __name__ == '__main__':
     import sys
