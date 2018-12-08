@@ -49,18 +49,25 @@ print(m.darCaminoMenorDistancia())
 print(m.darCaminoMenorTiempo())
 
 
-# fig = plt.figure()
-#
-# VecStart_x = [0, 1, 3, 5]
-# VecStart_y = [2, 2, 5, 5]
-# VecStart_z = [1, 1, 1, 5]
-# VecEnd_x = [1, 2, -1, 6]
-# VecEnd_y = [3, 1, -2, 7]
-# VecEnd_z = [1, 0, 4, 9]
-#
-# ax = fig.add_subplot(111, projection='3d')
-#
-# ax.plot(, [0,0], [1, 2], zs=[0, 4], label='toto')
-#
-# plt.show()
-# Axes3D.plot()
+fig = plt.figure()
+
+ax = fig.add_subplot(111, projection='3d')
+
+for c in m.listaCaminos:
+    ciX = []
+    ciY = []
+    ciZ = []
+
+    ciX.append(c.listaSegmentos[0].puntoInicial.x)
+    ciY.append(c.listaSegmentos[0].puntoInicial.y)
+    ciZ.append(c.listaSegmentos[0].puntoInicial.z)
+
+    for s in c.listaSegmentos:
+        ciX.append(s.puntoFinal.x)
+        ciY.append(s.puntoFinal.y)
+        ciZ.append(s.puntoFinal.z)
+        #print("%f - %f - %f" % (s.puntoInicial.x, s.puntoInicial.y, s.puntoInicial.z))
+
+    ax.plot(ciX, ciY, zs=ciZ, label='toto')
+
+plt.show()
