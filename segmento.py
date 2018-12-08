@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import punto
+import math
 
 class Segmento:
     def __init__(self, p0, p1):
@@ -9,17 +10,20 @@ class Segmento:
         self.puntoFinal = p1
 
     def darDistancia2D(self):
-        return self.puntoFinal.x - self.puntoInicial.x
+        return math.sqrt((self.puntoFinal.x - self.puntoInicial.x) ** 2 \
+                         + (self.puntoFinal.y - self.puntoInicial.y) ** 2)
 
     def darDistancia(self):
-        return self.puntoFinal.x - self.puntoInicial.x
+        return math.sqrt(  (self.puntoFinal.x - self.puntoInicial.x) ** 2 \
+                         + (self.puntoFinal.y - self.puntoInicial.y) ** 2 \
+                         + (self.puntoFinal.z - self.puntoInicial.z) ** 2)
 
     def darTiempo(self):
         return self.puntoFinal.t - self.puntoInicial.t
 
 def main(args):
-    pa = punto.Punto()
-    pb = punto.Punto(10, 0, 0, 3)
+    pa = punto.Punto(2, 3, 1, 0)
+    pb = punto.Punto(8, -5, 0, 3)
     s = Segmento(pa, pb)
 
     print(s.darDistancia2D())
