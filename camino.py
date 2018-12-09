@@ -49,7 +49,7 @@ Todo:
 class Camino:
     def __init__(self, nomb):
         """
-        Consrtuctor
+        Constructor
         :param nomb: nombre del camino
         """
         self.nombre = nomb

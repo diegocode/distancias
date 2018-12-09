@@ -33,16 +33,16 @@ class Mapa:
         devuelve el camino más corto
         :return: tupla (distancia, nombre de camino)
         """
-        lista_aux = ((c.darDistancia(), c.nombre) for c in self.listaCaminos)
-        return min(lista_aux, key=lambda x: x[0])
+        lista_aux = ((c.nombre, c.darDistancia()) for c in self.listaCaminos)
+        return min(lista_aux, key=lambda x: x[1])
 
     def darCaminoMenorTiempo(self):
         """
         devuelve el camino más rápido
         :return: tupla (tiempo, nombre de camino)
         """
-        lista_aux = ((c.darTiempoTotal(), c.nombre) for c in self.listaCaminos)
-        return min(lista_aux, key=lambda x: x[0])
+        lista_aux = [(c.nombre, c.darTiempoTotal()) for c in self.listaCaminos]
+        return min(lista_aux, key=lambda x: x[1])
 
 
 def main(args):
