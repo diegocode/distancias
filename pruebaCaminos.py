@@ -3,43 +3,52 @@ import punto, segmento, camino, mapa
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+m = mapa.Mapa("general")
 c = camino.Camino("prueba")
 
-p0 = punto.Punto(0, 0, 0, 0)
-p1 = punto.Punto(0, 10, 0, 3)
-p2 = punto.Punto(10, 10, 0, 5)
-p3 = punto.Punto(10, 0, 0, 9)
-p4 = punto.Punto(10, 0, 10, 14)
+p0 = punto.Punto(10, 20, 0, 0)
+p1 = punto.Punto(40, 30, 5, 3)
+p2 = punto.Punto(70, 30, 7, 5)
+p3 = punto.Punto(90, 20, 8, 9)
+p4 = punto.Punto(110, 10, 6, 14)
+p5 = punto.Punto(150, 40, 10, 20)
+p6 = punto.Punto(190, 30, 13, 25)
+p7 = punto.Punto(230, 36, 9, 31)
 
 s1 = segmento.Segmento(p0, p1)
 s2 = segmento.Segmento(p1, p2)
 s3 = segmento.Segmento(p2, p3)
 s4 = segmento.Segmento(p3, p4)
+s5 = segmento.Segmento(p4, p5)
+s6 = segmento.Segmento(p5, p6)
+s7 = segmento.Segmento(p6, p7)
 
 c.agregarSegmento(s1)
 c.agregarSegmento(s2)
 c.agregarSegmento(s3)
 c.agregarSegmento(s4)
+c.agregarSegmento(s5)
+c.agregarSegmento(s6)
+c.agregarSegmento(s7)
 
 print(c.darDistancia())
 
-m = mapa.Mapa("general")
 m.listaCaminos.append(c)
-
-p0 = punto.Punto(0, 0, 0, 0)
-p1 = punto.Punto(0, 10, 0, 3)
-p3 = punto.Punto(10, 0, 0, 18)
-p4 = punto.Punto(10, 0, 10, 22)
-
-s1 = segmento.Segmento(p0, p1)
-s2 = segmento.Segmento(p1, p3)
-s4 = segmento.Segmento(p3, p4)
 
 c = camino.Camino("dos")
 
+p0 = punto.Punto(10, 20, 0, 0)
+p3 = punto.Punto(90, 20, 0, 10)
+p5 = punto.Punto(150, 40, 0, 22)
+p7 = punto.Punto(230, 36, 9, 39)
+
+s1 = segmento.Segmento(p0, p3)
+s2 = segmento.Segmento(p3, p5)
+s3 = segmento.Segmento(p5, p7)
+
 c.agregarSegmento(s1)
 c.agregarSegmento(s2)
-c.agregarSegmento(s4)
+c.agregarSegmento(s3)
 
 print(c.darDistancia())
 
