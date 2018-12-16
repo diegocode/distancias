@@ -13,6 +13,6 @@ Clases:
 
 También resuelto en C (paradigma estructurado - en carpeta "estructurado_c") 
 
--
+
 
 Trabajo final del curso Paradigmas de Programación - INET - 2018.12
